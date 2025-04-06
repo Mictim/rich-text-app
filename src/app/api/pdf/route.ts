@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { generatePDF } from '@/lib/pdf-generator';
+// import { generatePDF } from '@/lib/pdf-generator';
+import { printPdf } from '@/lib/html-to-pdf';
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,14 +16,15 @@ export async function POST(request: NextRequest) {
     }
     
     // Generate the PDF
-    const pdfBuffer = await generatePDF({ caseId, email, content });
+    // const pdfBuffer = await generatePDF({ caseId, email, content });
+    const pdfBuffer = await printPdf(content, caseId);
     
     // Return the PDF file
-    return new NextResponse(pdfBuffer, {
+    return new NextResponse(pdfBuffer,{
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="case-${caseId}.pdf"`,
+        'Content-Disposition': `attachment; filename="${caseId}.pdf"`,
       },
     });
   } catch (error) {

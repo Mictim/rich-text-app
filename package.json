@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@asaje/html-to-pdf": "^1.0.4",
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-label": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.2",
@@ -24,9 +25,12 @@
     "@tiptap/starter-kit": "^2.11.7",
     "@types/nodemailer": "^6.4.17",
     "class-variance-authority": "^0.7.1",
+    "cloudinary": "^2.6.0",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
     "jspdf": "^3.0.1",
     "lucide-react": "^0.487.0",
+    "micro": "^10.0.1",
     "next": "15.2.4",
     "nodemailer": "^6.10.0",
     "react": "^19.0.0",
